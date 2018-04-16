@@ -6,7 +6,10 @@
     <groupId>com.wuwii</groupId>
     <artifactId>wu-security</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <packaging>jar</packaging>
+    <modules>
+        <module>wu-gateway</module>
+    </modules>
+    <packaging>pom</packaging>
 
     <name>wu-security</name>
     <description>Demo project for Spring Boot</description>
