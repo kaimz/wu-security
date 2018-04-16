@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: wu-gateway
+
+
+server:
+  port: 8322
+
+
