@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: wu-admin
+server:
+  port: 8401
+
+eureka:
+ instance:
+    statusPageUrlPath: /actuator/info
+    healthCheckUrlPath: /actuator/health
+        # docker 部署开启
+    #prefer-ip-address: true
+    #ip-address: 127.0.0.1
+ client:
+   serviceUrl:
+     defaultZone: http://localhost:8321/eureka/
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
