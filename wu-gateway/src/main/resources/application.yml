@@ -7,3 +7,17 @@ server:
   port: 8322
 
 
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8321/eureka
+
+# 目前 Hystrix Command 执行超时时，返回客户端 504 状态码，
+# 如果使用 JSON 格式作为数据返回，则需要修改下该 HystrixGatewayFilter 的代码实现。
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 10000
