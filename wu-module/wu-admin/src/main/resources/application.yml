@@ -1,6 +1,6 @@
 spring:
   application:
-    name: wu-admin
+    name: @pom.artifactId@
   datasource:
     url: jdbc:mysql://localhost:3306/wu-security?useSSL=false&allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8
     username: root

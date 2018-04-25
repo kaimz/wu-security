@@ -1,6 +1,6 @@
 spring:
   application:
-    name: wu-center
+    name: @pom.artifactId@
 server:
   port: 8321
 
