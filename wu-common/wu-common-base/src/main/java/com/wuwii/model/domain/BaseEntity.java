@@ -1,6 +1,8 @@
 package com.wuwii.model.domain;
 
 import lombok.Data;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
@@ -21,8 +23,10 @@ public class BaseEntity implements Serializable {
     private Long version;
 
     @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+    @CreationTimestamp
     private Date createTime;
 
     @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+    @UpdateTimestamp
     private Date updateTime;
 }

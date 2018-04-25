@@ -1,5 +1,6 @@
 package com.wuwii.repositry;
 
+import com.wuwii.model.domain.AdminUser;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,5 +21,13 @@ public class AdminUserRepositryTest {
     @Test
     public void testFindAll() {
         System.out.println(adminUserRepositry.findAll());
+    }
+
+    @Test
+    public void testAdd() {
+        AdminUser user = new AdminUser();
+        user.setUsername("kronchan");
+        user.setPassword("123456");
+        adminUserRepositry.save(user);
     }
 }

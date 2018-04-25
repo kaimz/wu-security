@@ -35,6 +35,11 @@ public class AdminMenu extends BaseEntity {
     private Boolean enable;
 
     /**
+     * 是否是叶子节点
+     */
+    private Boolean leaf;
+
+    /**
      * 权限
      */
     private String url;
