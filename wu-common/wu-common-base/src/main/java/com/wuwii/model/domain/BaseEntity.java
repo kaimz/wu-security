@@ -22,6 +22,7 @@ public class BaseEntity implements Serializable {
     @Version
     private Long version;
 
+    @Column(updatable = false)
     @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     @CreationTimestamp
     private Date createTime;
