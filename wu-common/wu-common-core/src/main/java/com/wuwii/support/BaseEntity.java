@@ -1,4 +1,4 @@
-package com.wuwii.model.domain;
+package com.wuwii.support;
 
 import lombok.Data;
 import org.hibernate.annotations.CreationTimestamp;

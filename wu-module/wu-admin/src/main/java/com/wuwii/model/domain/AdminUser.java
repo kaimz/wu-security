@@ -1,6 +1,7 @@
 package com.wuwii.model.domain;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.wuwii.support.BaseEntity;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import org.springframework.format.annotation.DateTimeFormat;

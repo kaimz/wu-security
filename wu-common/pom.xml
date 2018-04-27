@@ -14,6 +14,7 @@
     <modules>
         <module>wu-common-base</module>
         <module>wu-security-core</module>
+        <module>wu-common-base</module>
     </modules>
 
 

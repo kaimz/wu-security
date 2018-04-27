@@ -1,5 +1,6 @@
 package com.wuwii.model.domain;
 
+import com.wuwii.support.BaseEntity;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
