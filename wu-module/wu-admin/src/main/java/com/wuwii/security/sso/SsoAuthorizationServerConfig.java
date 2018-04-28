@@ -56,7 +56,7 @@ public class SsoAuthorizationServerConfig extends AuthorizationServerConfigurerA
      */
     @Override
     public void configure(AuthorizationServerSecurityConfigurer security) throws Exception {
-        security.tokenKeyAccess("isAuthenticated()");
+       // security.tokenKeyAccess("isAuthenticated()");
     }
 
     /**
