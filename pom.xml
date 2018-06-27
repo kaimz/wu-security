@@ -16,6 +16,8 @@
         <module>wu-gateway</module>
         <module>wu-module</module>
         <module>wu-common</module>
+        <module>wu-gateway-zuul</module>
+        <module>wu-gateway-zuul</module>
     </modules>
     <packaging>pom</packaging>
 
