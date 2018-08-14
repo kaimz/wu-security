@@ -26,6 +26,8 @@ spring:
   security:
     filter:
       order: 3
+  redis:
+      host: 127.0.0.1
 server:
   port: 8401
 
@@ -45,4 +47,23 @@ management:
     web:
       exposure:
         include: '*'
+
+
+wu:
+  security:
+    oauth2:
+      jwt:
+        signKey: F38CF181F9B5698CCCA979C2927AA98D
+      refresh: 1296000  # 15 days
+      access: 7200
+      clients:
+      - id: wuwii
+        secret: 123456
+      - id: webapp
+        secret: 123456
+
+
+
+
+
 

@@ -4,7 +4,6 @@ import com.wuwii.enums.ErrorCodeEnum;
 import com.wuwii.exception.BusinessException;
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
 
@@ -14,7 +13,6 @@ import java.io.Serializable;
  * Created by KronChan on 2018/4/27 15:01.
  */
 @Data
-@NoArgsConstructor
 @AllArgsConstructor
 public class FailedWrapper implements Serializable {
 
