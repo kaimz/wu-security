@@ -6,6 +6,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -26,6 +27,7 @@ import java.util.List;
 /**
  * Created by KronChan on 2018/4/27 18:26.
  */
+@Configuration
 @ConfigurationProperties(prefix = "wu.security.oauth2")
 @EnableAuthorizationServer
 @RequiredArgsConstructor(onConstructor = @__(@Autowired))
@@ -82,7 +84,7 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
         ClientProperties clientProperties = oAuth2Properties.getClientProperties();
         for (ClientProperties.SsoClient client : clientProperties.getClients()) {
             build.withClient(client.getId())
-                    .secret(passwordEncoder.encode(client.getSecure()))
+                    .secret(passwordEncoder.encode(client.getSecret()))
                     .accessTokenValiditySeconds(access)
                     .refreshTokenValiditySeconds(refresh)
                     .authorizedGrantTypes("refresh_token", "password", "authorization_code")//OAuth2支持的验证模式

@@ -16,6 +16,6 @@ public class ClientProperties {
     public static class SsoClient {
         private String id;
 
-        private String secure;
+        private String secret;
     }
 }
