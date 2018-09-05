@@ -4,11 +4,8 @@ import com.wuwii.support.BaseEntity;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.OneToMany;
-import java.util.Set;
 
 /**
  * The class menu
@@ -41,9 +38,14 @@ public class AdminMenu extends BaseEntity {
     private Boolean leaf;
 
     /**
-     * 权限
+     * url
      */
     private String url;
+
+    /**
+     * 权限标志
+     */
+    private String auth;
 
     /**
      * 父菜单
@@ -63,7 +65,14 @@ public class AdminMenu extends BaseEntity {
     @Column(length = 100)
     private String remark;
 
-    @OneToMany(targetEntity = AdminAction.class, mappedBy = "menuId", cascade = CascadeType.ALL)
-    @org.hibernate.annotations.ForeignKey(name = "none")
-    private Set<AdminAction> actions;
+    /**
+     * 菜单类型，
+     * 0 菜单，1 按钮
+     */
+    private Short type;
+
+    /**
+     * 菜单排序值，相同级别下，值越小排在前面
+     */
+    private Integer sort;
 }

@@ -20,6 +20,8 @@ import java.util.Set;
 @Data
 public class AdminUser extends BaseEntity {
 
+    public static final AdminUser EMPTY = new AdminUser();
+
     @Column(length = 50, unique = true, nullable = false)
     private String username;
 
