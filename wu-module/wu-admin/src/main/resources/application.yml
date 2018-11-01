@@ -2,11 +2,11 @@ spring:
   application:
     name: @pom.artifactId@
   datasource:
-    url: jdbc:mysql://localhost:3306/wu-security?useSSL=false&allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8
+    url: jdbc:mysql://localhost:3306/wu_security?useSSL=false&allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8
     username: root
     password: 123456
     driver-class-name: com.mysql.jdbc.Driver
- # jackson时间格式化
+  # jackson时间格式化
   jackson:
     time-zone: GMT+8
     date-format: yyyy-MM-dd HH:mm:ss
@@ -23,11 +23,19 @@ spring:
     properties:
       hibernate:
         dialect: org.hibernate.dialect.MySQL57Dialect
+        enable_lazy_load_no_trans: true # 懒加载的session
+    open-in-view: true
   security:
     filter:
       order: 3
   redis:
       host: 127.0.0.1
+      database: 0
+  cache:
+    type: redis
+    redis:
+      use-key-prefix: true
+      key-prefix: "wu-admin"
 server:
   port: 8401
 
@@ -54,8 +62,8 @@ wu:
     oauth2:
       jwt:
         signKey: F38CF181F9B5698CCCA979C2927AA98D
-      refresh: 1296000  # 15 days
-      access: 7200
+      refresh: 7200
+      access: 1296000 # 15 days
       clients:
       - id: wuwii
         secret: 123456

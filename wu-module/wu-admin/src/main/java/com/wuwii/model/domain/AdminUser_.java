@@ -16,6 +16,7 @@ public class AdminUser_ {
     public static volatile SingularAttribute<AdminUser, String> username;
     public static volatile SingularAttribute<AdminUser, String> password;
     public static volatile SingularAttribute<AdminUser, String> realName;
+    public static volatile SingularAttribute<AdminUser, String> email;
     public static volatile SingularAttribute<AdminUser, Boolean> enable;
     public static volatile SingularAttribute<AdminUser, Date> lastLoginTime;
     public static volatile SingularAttribute<AdminUser, String> remark;
