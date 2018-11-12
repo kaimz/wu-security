@@ -41,14 +41,14 @@ server:
 
 eureka:
  instance:
-    statusPageUrlPath: /actuator/info
-    healthCheckUrlPath: /actuator/health
+  #  statusPageUrlPath: /actuator/info
+  #  healthCheckUrlPath: /actuator/health
         # docker 部署开启
     #prefer-ip-address: true
     #ip-address: 127.0.0.1
  client:
    serviceUrl:
-     defaultZone: http://localhost:8321/eureka/
+     defaultZone: http://127.0.0.1:8321/eureka/
 
 management:
   endpoints:

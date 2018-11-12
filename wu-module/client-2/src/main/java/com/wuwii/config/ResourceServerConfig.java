@@ -1,5 +1,6 @@
 package com.wuwii.config;
 
+import org.springframework.boot.autoconfigure.security.oauth2.client.EnableOAuth2Sso;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -11,8 +12,10 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Created by KronChan on 2018/4/28 18:23.
  */
+
 @Configuration
 @EnableResourceServer
+@EnableOAuth2Sso
 @EnableGlobalMethodSecurity(prePostEnabled = true)
 public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
     @Override
@@ -27,4 +30,10 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
                 .and()
                 .httpBasic();
     }
+
+/*    @Bean
+    public OAuth2RestTemplate oAuth2RestTemplate(OAuth2ClientContext oAuth2ClientContext, OAuth2ProtectedResourceDetails details){
+        return new OAuth2RestTemplate(details,oAuth2ClientContext);
+    }*/
+
 }

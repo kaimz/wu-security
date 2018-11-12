@@ -6,8 +6,8 @@
 	<artifactId>wu-module</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
     <modules>
-        <module>client-1</module>
 		<module>wu-admin</module>
+		<module>client-2</module>
     </modules>
     <packaging>pom</packaging>
 

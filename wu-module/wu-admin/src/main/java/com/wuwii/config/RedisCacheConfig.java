@@ -8,7 +8,6 @@ import org.springframework.data.redis.cache.RedisCacheManager;
 import org.springframework.data.redis.connection.RedisConnectionFactory;
 
 /**
- * https://blog.csdn.net/sy793314598/article/details/80719224
  * Created by KronChan on 18/11/1 下午6:16.
  */
 @Configuration
@@ -16,8 +15,13 @@ import org.springframework.data.redis.connection.RedisConnectionFactory;
 public class RedisCacheConfig {
     @Bean
     public CacheManager cacheManager(RedisConnectionFactory factory) {
+        // 初始化为默认设置
         RedisCacheManager redisCacheManager = RedisCacheManager.create(factory);
         // 设置缓存最大时间
+        /*RedisCacheConfiguration config = RedisCacheConfiguration.defaultCacheConfig();  // 生成一个默认配置，通过config对象即可对缓存进行自定义配置
+        config = config.entryTtl(Duration.ofMinutes(1))     // 设置缓存的默认过期时间，也是使用Duration设置
+                .disableCachingNullValues();     // 不缓存空值
+*/
         return redisCacheManager;
     }
 }

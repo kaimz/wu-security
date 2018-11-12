@@ -1,0 +1,26 @@
+spring:
+  application:
+    name: @pom.artifactId@
+
+server:
+  port: 9002
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:8321/eureka
+feign:
+  hystrix:
+    enabled: true
+uaa: http://localhost:8322/WU-ADMIN
+security:
+  oauth2:
+    client:
+      access-token-uri: ${uaa}/oauth/token
+      user-authorization-uri: ${uaa}/oauth/authorize
+      client-id: client1
+      client-secret: 123456
+    resource:
+      #token-info-uri: ${uaa}/check_token 配置 user或者 token都可以
+      user-info-uri: ${uaa}/sso
+      prefer-token-info: false
+

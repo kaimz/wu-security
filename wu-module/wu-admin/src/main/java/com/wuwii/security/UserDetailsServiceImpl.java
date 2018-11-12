@@ -9,7 +9,6 @@ import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
-import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.Set;
@@ -21,11 +20,10 @@ import java.util.Set;
 @RequiredArgsConstructor(onConstructor = @__(@Autowired))
 public class UserDetailsServiceImpl implements UserDetailsService {
 
-    private final PasswordEncoder passwordEncoder;
-
     private final AdminUserService adminUserService;
 
     private final AdminMenuService adminMenuService;
+
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         AdminUser adminUser = adminUserService.findByUsername(username);
@@ -33,7 +31,6 @@ public class UserDetailsServiceImpl implements UserDetailsService {
             throw new UsernameNotFoundException(username);
         }
         String password = adminUser.getPassword();
-        //return new User(username, password, AuthorityUtils.commaSeparatedStringToAuthorityList("ROLE_USER"));
         Set<String> menuAuths = adminMenuService.findMenuAuthByUserName(username);
         String[] authStrings = menuAuths.toArray(new String[0]);
         return User.withUsername(username)

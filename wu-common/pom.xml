@@ -12,9 +12,9 @@
     <artifactId>wu-common</artifactId>
     <packaging>pom</packaging>
     <modules>
-        <module>wu-common-base</module>
         <module>wu-security-core</module>
-        <module>wu-common-base</module>
+        <module>wu-common-core</module>
+        <module>wu-security-feign</module>
     </modules>
 
 

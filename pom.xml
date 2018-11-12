@@ -36,6 +36,8 @@
         <spring-cloud.version>Finchley.RELEASE</spring-cloud.version>
         <commons-lang3.version>3.7</commons-lang3.version>
         <springfox-swagger2.version>2.9.2</springfox-swagger2.version>
+        <feign-okhttp.version>8.18.0</feign-okhttp.version>
+        <wu-security-feign.version>0.0.1-SNAPSHOT</wu-security-feign.version>
     </properties>
 
     <dependencyManagement>
@@ -50,7 +52,7 @@
             <dependency>
                 <groupId>com.wuwii</groupId>
                 <artifactId>wu-common-core</artifactId>
-                <version>0.0.1-SNAPSHOT</version>
+                <version>${version}</version>
             </dependency>
             <dependency>
                 <groupId>org.apache.commons</groupId>
@@ -67,6 +69,16 @@
                 <artifactId>springfox-swagger-ui</artifactId>
                 <version>${springfox-swagger2.version}</version>
             </dependency>
+            <dependency>
+                <groupId>com.netflix.feign</groupId>
+                <artifactId>feign-okhttp</artifactId>
+                <version>${feign-okhttp.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.wuwii</groupId>
+                <artifactId>wu-security-feign</artifactId>
+                <version>0.0.1-SNAPSHOT</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
@@ -79,6 +91,12 @@
                     <fork>true</fork>
                     <addResources>true</addResources>
                 </configuration>
+                <!--避免报错 repackage failed: Unable to find main class-->
+                <executions>
+                    <execution>
+                        <phase>none</phase>
+                    </execution>
+                </executions>
             </plugin>
             <!-- 跳过单元测试 -->
             <plugin>
