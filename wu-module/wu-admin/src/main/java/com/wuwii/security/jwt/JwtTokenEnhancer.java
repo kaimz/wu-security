@@ -11,7 +11,7 @@ public class JwtTokenEnhancer implements TokenEnhancer {
 
     @Override
     public OAuth2AccessToken enhance(OAuth2AccessToken accessToken, OAuth2Authentication authentication) {
-        // todo token info
+        // todo 可以在这里给token 设置更多信息
         return accessToken;
     }
 }

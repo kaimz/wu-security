@@ -1,4 +1,4 @@
-package com.wuwii.config;
+package com.wuwii.feign;
 
 import feign.RequestInterceptor;
 import feign.RequestTemplate;

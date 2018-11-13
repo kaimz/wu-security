@@ -13,7 +13,7 @@ public class ClientProperties {
     private SsoClient[] clients;
 
     @Data
-    public static class SsoClient {
+    static class SsoClient {
         private String id;
 
         private String secret;

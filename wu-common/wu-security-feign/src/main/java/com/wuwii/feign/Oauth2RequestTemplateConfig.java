@@ -1,4 +1,4 @@
-package com.wuwii.config;
+package com.wuwii.feign;
 
 import org.jboss.logging.Logger;
 import org.springframework.boot.autoconfigure.security.oauth2.resource.UserInfoRestTemplateFactory;

@@ -1,4 +1,4 @@
-package com.wuwii.config;
+package com.wuwii;
 
 import org.springframework.cache.CacheManager;
 import org.springframework.cache.annotation.EnableCaching;

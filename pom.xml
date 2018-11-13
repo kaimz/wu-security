@@ -38,6 +38,7 @@
         <springfox-swagger2.version>2.9.2</springfox-swagger2.version>
         <feign-okhttp.version>8.18.0</feign-okhttp.version>
         <wu-security-feign.version>0.0.1-SNAPSHOT</wu-security-feign.version>
+        <commons-io.version>2.6</commons-io.version>
     </properties>
 
     <dependencyManagement>
@@ -52,7 +53,7 @@
             <dependency>
                 <groupId>com.wuwii</groupId>
                 <artifactId>wu-common-core</artifactId>
-                <version>${version}</version>
+                <version>${project.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.apache.commons</groupId>
@@ -77,7 +78,13 @@
             <dependency>
                 <groupId>com.wuwii</groupId>
                 <artifactId>wu-security-feign</artifactId>
-                <version>0.0.1-SNAPSHOT</version>
+                <version>${wu-security-feign.version}</version>
+            </dependency>
+            <!-- https://mvnrepository.com/artifact/commons-io/commons-io -->
+            <dependency>
+                <groupId>commons-io</groupId>
+                <artifactId>commons-io</artifactId>
+                <version>${commons-io.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
@@ -88,7 +95,7 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
-                    <fork>true</fork>
+                    <!--<fork>true</fork>-->
                     <addResources>true</addResources>
                 </configuration>
                 <!--避免报错 repackage failed: Unable to find main class-->
@@ -108,13 +115,13 @@
             </plugin>
         </plugins>
         <resources>
-            <resource>
+            <!--<resource>
                 <directory>src/main/resources</directory>
                 <filtering>true</filtering>
                 <excludes>
                     <exclude>*.jks</exclude>
                 </excludes>
-            </resource>
+            </resource>-->
         </resources>
     </build>
     <repositories>
