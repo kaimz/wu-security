@@ -3,6 +3,7 @@ package com.wuwii.feign;
 import feign.RequestInterceptor;
 import feign.RequestTemplate;
 import org.springframework.security.oauth2.client.OAuth2RestTemplate;
+import org.springframework.security.oauth2.common.OAuth2AccessToken;
 import org.springframework.stereotype.Component;
 
 /**
@@ -12,7 +13,7 @@ import org.springframework.stereotype.Component;
 public class Oauth2RequestTemplateFeignInterceptor implements RequestInterceptor {
     private static final String AUTHORIZATION_HEADER = "Authorization";
 
-    private static final String BEARER_TOKEN_TYPE = "bearer";
+    private static final String BEARER_TOKEN_TYPE = OAuth2AccessToken.BEARER_TYPE;
 
     private OAuth2RestTemplate oAuth2RestTemplate;
 

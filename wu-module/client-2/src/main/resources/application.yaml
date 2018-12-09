@@ -17,10 +17,23 @@ security:
     client:
       access-token-uri: ${uaa}/oauth/token
       user-authorization-uri: ${uaa}/oauth/authorize
-      client-id: client1
+      client-id: wuwii
       client-secret: 123456
     resource:
-      #token-info-uri: ${uaa}/check_token 配置 user或者 token都可以
-      user-info-uri: ${uaa}/sso
-      prefer-token-info: false
-
+      # 使用 user-info-uri 的时候需要 配置 prefer-token-info: false
+      # 使用 token-info-uri , prefer-token-info: true，如果是 jwt 的话，还需要公钥，配置 jwt.key_url或者jwt.key_value
+      token-info-uri: ${uaa}/check_token  #配置 user或者 token都可以
+      #user-info-uri: ${uaa}/sso
+      prefer-token-info: true
+      #      jwt:
+      #        key-value:
+      #          -----BEGIN PUBLIC KEY-----
+      #          MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAqON/FH7EUXgDXhun+gBL
+      #          Xq6/VabQPQbnz7c/27tMv9VKI6ldubYwwZgs+HDYBepps62hGZN5/Fk6Feg73/T0
+      #          ocbujaVyAwCuqnHBfo6Qq5Z6ldCA5/J2GpB4hgfnwtGEG8MlqeUrgA53megYsmB0
+      #          Vopps8Uc/h7Ej4u9stbsKwsMTpwRmuzwim7G7axgDvkGyR9UqCCnT4YLPwm/wOVw
+      #          fweTCzWN31lrtwOdf64TxgRF2MOlwBgNtv4TekfXbugmgsn1G5w/5E2P7iOIphjN
+      #          l3dMFPvG1MpsuEuICoC83Tr2hgL9L+4o6W31o7VuQ255ZKEynHOV1yRudI0Owxot
+      #          nQIDAQAB
+      #          -----END PUBLIC KEY-----
+      #key-uri: ${uaa}/oauth/token_key

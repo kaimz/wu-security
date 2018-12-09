@@ -93,13 +93,6 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
         }
     }
 
-//    @Override
-//    public void configure(AuthorizationServerSecurityConfigurer oauthServer) {
-//        //允许表单认证
-//        oauthServer.allowFormAuthenticationForClients();
-//        oauthServer.passwordEncoder(passwordEncoder);
-//    }
-
     /**
      * springSecurity 授权表达式，
      *
@@ -110,73 +103,9 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
     public void configure(AuthorizationServerSecurityConfigurer security) throws Exception {
         security.tokenKeyAccess("permitAll()");
         security.checkTokenAccess("isAuthenticated()");
-    }
-    /**
-     * 客户端一些配置
-     *
-     * @param clients
-     * @throws Exception
-     *//*
-    @Override
-    public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
-        clients.inMemory()
-                .withClient("merryyou1")
-                .secret("merryyousecrect1")
-                .authorizedGrantTypes("authorization_code", "refresh_token")
-                .scopes("all")
-                .and()
-                .withClient("merryyou2")
-                .secret("merryyousecrect2")
-                .authorizedGrantTypes("authorization_code", "refresh_token")
-                .scopes("all");
+        //允许表单认证
+        security.allowFormAuthenticationForClients();
+        // security.passwordEncoder(passwordEncoder);
     }
 
-    *//**
-     * 配置jwttokenStore
-     *
-     * @param endpoints
-     * @throws Exception
-     *//*
-    @Override
-    public void configure(AuthorizationServerEndpointsConfigurer endpoints) throws Exception {
-        endpoints.tokenStore(jwtTokenStore()).accessTokenConverter(jwtAccessTokenConverter());
-    }
-
-    *//**
-     * springSecurity 授权表达式，访问merryyou tokenkey时需要经过认证
-     *
-     * @param security
-     * @throws Exception
-     *//*
-    @Override
-    public void configure(AuthorizationServerSecurityConfigurer security) throws Exception {
-       // security.tokenKeyAccess("isAuthenticated()");
-        security
-                .tokenKeyAccess("permitAll()")
-                .checkTokenAccess("isAuthenticated()");
-    }
-
-    *//**
-     * JWTtokenStore
-     *
-     * @return
-     *//*
-    @Bean
-    public TokenStore jwtTokenStore() {
-        return new JwtTokenStore(jwtAccessTokenConverter());
-    }
-
-    *//**
-     * // 可以使用密钥加密
-     * https://blog.csdn.net/chenjianandiyi/article/details/78604376
-     * 生成JTW token
-     *
-     * @return
-     *//*
-    @Bean
-    public JwtAccessTokenConverter jwtAccessTokenConverter() {
-        JwtAccessTokenConverter converter = new JwtAccessTokenConverter();
-        converter.setSigningKey("kronchan");
-        return converter;
-    }*/
 }
