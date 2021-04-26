@@ -38,7 +38,7 @@
         <springfox-swagger2.version>2.9.2</springfox-swagger2.version>
         <feign-okhttp.version>8.18.0</feign-okhttp.version>
         <wu-security-feign.version>0.0.1-SNAPSHOT</wu-security-feign.version>
-        <commons-io.version>2.6</commons-io.version>
+        <commons-io.version>2.7</commons-io.version>
     </properties>
 
     <dependencyManagement>
